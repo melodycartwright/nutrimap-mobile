@@ -47,3 +47,34 @@ The goal is not to document every tiny line of code. The goal is to document mea
 
 - The built-in React Native `SafeAreaView` is deprecated.
 - `react-native-safe-area-context` is the recommended safe-area solution for modern React Native/Expo apps.
+
+---
+
+## 2026-05-10 — Extracted reusable HomeCard component
+
+### What changed
+
+- Created a reusable `HomeCard` component.
+- Replaced repeated card JSX in `App.tsx` with three `HomeCard` usages.
+
+### Files touched
+
+- `App.tsx`
+- `src/components/HomeCard.tsx`
+- `docs/learning-log.md`
+
+### Why this matters
+
+- Repeated UI was moved into a small reusable component.
+- `App.tsx` is now easier to read.
+- This introduces the React Native pattern of passing data into components through props.
+
+### What I learned
+
+- Props allow a component to receive different text while keeping the same structure.
+- A reusable component should have one clear responsibility.
+- A refactor can improve code without changing the visible app.
+
+### Questions / Needs verification
+
+- I still need to learn when a component should stay local versus become reusable.
