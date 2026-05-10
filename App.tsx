@@ -3,6 +3,8 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import HomeCard from "./src/components/HomeCard";
+import SupplementCard from "./src/features/supplements/SupplementCard";
+import { supplements } from "./src/features/supplements/mockData";
 
 export default function App() {
   return (
@@ -12,8 +14,8 @@ export default function App() {
           <Text style={styles.appName}>Nutrimap Mobile</Text>
           <Text style={styles.title}>Your daily wellness companion</Text>
           <Text style={styles.subtitle}>
-            Track supplements, daily habits, and small progress steps in one calm
-            place.
+            Track supplements, daily habits, and small progress steps in one
+            calm place.
           </Text>
         </View>
 
@@ -31,6 +33,14 @@ export default function App() {
           title="Progress"
           description="Notice patterns, consistency, and small wins over time."
         />
+
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Today&apos;s supplements</Text>
+
+          {supplements.map((supplement) => (
+            <SupplementCard key={supplement.id} supplement={supplement} />
+          ))}
+        </View>
 
         <StatusBar style="dark" />
       </ScrollView>
@@ -66,5 +76,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: "#5F5753",
+  },
+  section: {
+    marginTop: 12,
+    gap: 12,
+  },
+  sectionTitle: {
+    fontSize: 22,
+    fontWeight: "700",
+    color: "#2F2A28",
   },
 });

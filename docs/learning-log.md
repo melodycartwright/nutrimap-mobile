@@ -78,3 +78,42 @@ The goal is not to document every tiny line of code. The goal is to document mea
 ### Questions / Needs verification
 
 - I still need to learn when a component should stay local versus become reusable.
+
+---
+
+## 2026-05-10 — Added fake supplement data
+
+### What changed
+
+- Created a supplements feature folder.
+- Added TypeScript types for supplement data.
+- Added fake supplement data.
+- Created a `SupplementCard` component.
+- Rendered today’s supplements on the home screen.
+
+### Files touched
+
+- `App.tsx`
+- `src/features/supplements/types.ts`
+- `src/features/supplements/mockData.ts`
+- `src/features/supplements/SupplementCard.tsx`
+- `docs/learning-log.md`
+
+### Why this matters
+
+- This introduces the first real data flow in the app.
+- The app now renders UI from structured data instead of hardcoded repeated blocks.
+- Fake data lets me learn UI and data flow before connecting a backend.
+
+### What I learned
+
+- TypeScript types define the expected shape of data.
+- Mock data is useful before adding APIs or databases.
+- `.map()` renders a list of components from an array.
+- `key={supplement.id}` helps React identify each list item.
+- A display component can receive one object through props and render it.
+
+### Questions / Needs verification
+
+- I still need to learn when to use `ScrollView` versus `FlatList` for lists.
+- I still need to learn how this fake data will eventually be replaced by API data.
