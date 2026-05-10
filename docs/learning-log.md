@@ -38,3 +38,12 @@ The goal is not to document every tiny line of code. The goal is to document mea
 
 - I still need to understand how navigation between screens will work.
 - I still need to decide whether to use Expo Router or React Navigation.
+
+### Update
+
+- Replaced React Native's deprecated `SafeAreaView` import with `SafeAreaView` from `react-native-safe-area-context`.
+
+### Why this matters
+
+- The built-in React Native `SafeAreaView` is deprecated.
+- `react-native-safe-area-context` is the recommended safe-area solution for modern React Native/Expo apps.
